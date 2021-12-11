@@ -125,10 +125,14 @@ function Modal() {
 
 function MenuBar() {
     return (
-        <div className="menu-modal">
-            <ul>소개</ul>
-            <ul>도큐먼트</ul>
-            <ul>설명</ul>
+        <div className="menuContainer">
+            <div className="menu-modal">
+                <ul>
+                    <li className="menuList">소개</li>
+                    <li className="menuList">도큐먼트</li>
+                    <li className="menuList">설명</li>
+                </ul>
+            </div>
         </div>
     );
 }

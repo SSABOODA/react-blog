@@ -17,6 +17,10 @@ body {
     border-radius: 10px;
 }
 
+.menuContainer {
+    display: flex;
+    justify-content: center;
+}
 .menu-modal {
     border: 1px solid;
     padding: 5px;
@@ -25,7 +29,12 @@ body {
     margin-left: 310px;
     margin-right: 310px;
     border-radius: 10px;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    width: 100px;
+}
+
+.menuList {
+    list-style: none;
 }
 
 .black-nav {
