@@ -8,12 +8,14 @@ function App() {
     // useState(state data, state data 변경 함수)
     // state = 변수 대신 데이터를 저장하는 공간
     const address = ['PYTHON', 'JAVA', 'JAVASCRIPT', 'REACT'];
+    const date = ['3월1일', '3월2일', '3월3일', '3월4일'];
 
     const firstLikesNum = 0;
     // useState(data, modifyfunction)
     // modifyfunction에는 data 에 담긴 자료형과 똑같이 생긴 자료만 변경함수에 삽입하여야한다.
 
     let [title, modTitle] = useState(address);
+    let [postDate, postModDate] = useState(date);
     let [likes, modLikes] = useState(firstLikesNum);
     let [modal, modModal] = useState(false);
     let [menu, modMenu] = useState(false);
@@ -39,7 +41,7 @@ function App() {
             <div className="black-nav">
                 <div>개발 BLOG</div>
             </div>
-            <div>
+            {/* <div>
                 <button
                     className="sort-button"
                     onClick={() => {
@@ -108,7 +110,27 @@ function App() {
             >
                 메뉴
             </button>
-            {menu === true ? <MenuBar></MenuBar> : null}
+            {menu === true ? <MenuBar></MenuBar> : null} */}
+
+            {title.map(function (i) {
+                return (
+                    <div className="list">
+                        <h3>
+                            {i}
+                            <span
+                                onClick={() => {
+                                    modLikes(likes + 1);
+                                }}
+                            >
+                                👍
+                            </span>
+                            {likes}
+                        </h3>
+                        <p>2월 20일 발행</p>
+                        <hr />
+                    </div>
+                );
+            })}
         </div>
     );
 }
