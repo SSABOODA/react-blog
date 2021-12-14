@@ -43,9 +43,10 @@ function App() {
                     글 제목 정렬
                 </button>
             </div>
+
             {title.map(function (i, j) {
                 return (
-                    <div className="list">
+                    <div className="list" key={j}>
                         <h3
                             onClick={() => {
                                 modInputTitle(j);
@@ -67,6 +68,23 @@ function App() {
                 );
             })}
 
+            <div className="publish">
+                <input
+                    onChange={(e) => {
+                        modInputValue(e.target.value);
+                    }}
+                />
+                <button
+                    onClick={() => {
+                        var newArray = [...title];
+                        newArray.unshift(inputValue);
+                        modTitle(newArray);
+                    }}
+                >
+                    저장
+                </button>
+            </div>
+
             <button
                 className="menu-button"
                 onClick={() => {
@@ -75,6 +93,7 @@ function App() {
             >
                 메뉴
             </button>
+
             {menu === true ? (
                 <MenuBar title={title} inputTitle={inputTitle}></MenuBar>
             ) : null}
