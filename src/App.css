@@ -21,6 +21,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 .menu-modal {
     border: 1px solid;
     padding: 5px;
@@ -29,8 +30,8 @@ body {
     margin-left: 310px;
     margin-right: 310px;
     border-radius: 10px;
+    width: 300px;
     /* text-decoration: underline; */
-    width: 100px;
 }
 
 .menuList {
